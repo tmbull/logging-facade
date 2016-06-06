@@ -38,7 +38,7 @@ import           GHC.Stack
 
 -- | Produce a log message with specified log level.
 log :: with_loc Logging m => LogLevel -> String -> m ()
-log level message = consumeLogRecord (LogRecord level location message)
+log level message = consumeLogRecord (LogRecord level location ("EEEEEEEE" ++ message))
   where
     location :: Maybe Location
 #ifdef HAS_SOURCE_LOCATIONS
